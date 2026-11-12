@@ -1,11 +1,8 @@
 class Bike:
-    def __init__(
-        self,
-        number,
-        bike_type,
-    ):
+    def __init__(self, number, bike_type, charge=100):
         self.number = number
         self.bike_type = bike_type
+        self.charge = charge
 
     def per_minute(self):
         if self.bike_type == "звичайний":
@@ -14,8 +11,9 @@ class Bike:
             return 5
 
     def is_usable(self):
-        if self.bike_type == "звичайний" or self.bike_type == "електричний":
-            return True
+        if self.bike_type == "електричний":
+            return self.charge >= 20
+        return True
 
 
 class Station:
@@ -24,16 +22,26 @@ class Station:
         self.bikes = []
 
     def add_bike(self, bikes):
-        self.bikes.append(bikes)
+        self.bikes.extend([bikes])
 
     def give_bike(self):
-        if self.bikes:
-            return self.bikes.pop()
-        else:
-            return None
+        for bike in self.bikes:
+            if bike.is_usable():
+                self.bikes.remove(bike)
+                return bike
+        return None
 
     def count_bikes(self):
         return len(self.bikes)
 
     def __str__(self):
         return f"Станція {self.name_station} з {len(self.bikes)} велосипедами"
+
+
+def low_charge_bikes(stations):
+    result = []
+    for station in stations:
+        for bike in station.bikes:
+            if bike.bike_type == "електричний" and bike.charge < 20:
+                result.append((bike.number, station.name_station, bike.charge))
+    return f"Велосипеди з низьким зарядом: {result}"
