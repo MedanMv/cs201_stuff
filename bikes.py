@@ -19,9 +19,8 @@ class Bike:
 
 
 class Station:
-    def __init__(self, name_station, bike_type, bikes):
+    def __init__(self, name_station, bikes):
         self.name_station = name_station
-        self.bike_type = bike_type
         self.bikes = bikes
 
     def add_bike(self, bikes):
