@@ -6,16 +6,18 @@ class Client:
         self.balance = balance
         self.bike = None
 
-    def take_bike(self, station, bike_type, number):
+    def take_bike(self, station, bike_type):
         bike = Station.give_bike(bike_type)
         if bike != "нічо":
             self.bike = bike
 
-    def calculate_price(ride_time, bike_type):
+    def calculate_price(self, ride_time, bike_type):
         price_per_minute = Bike.per_minute(bike_type)
         return price_per_minute * ride_time
 
-    def return_bike(station, bike_type, number):
+    def return_bike(self, bike):
+        Station.add_bike(bike)
+
 
 
 
