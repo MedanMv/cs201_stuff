@@ -32,6 +32,8 @@ def main():
     print(client1)
     print(station1)
     print(station2)
+    print(station3)
+    print()
     client1.take_bike(station1)
     mins_ride1 = random.randint(1, 60)
     try:
@@ -42,10 +44,11 @@ def main():
         print(client1)
         print(station1)
         print(station2)
+        print(station3)
     except AttributeError:
         print("Vidsutni velosipedi")
         trip1 = 0
-
+    print()
     client1.take_bike(station2)
     mins_ride1 = random.randint(1, 60)
     try:
@@ -56,10 +59,11 @@ def main():
         print(client1)
         print(station1)
         print(station2)
+        print(station3)
     except AttributeError:
         print("Vidsutni velosipedi")
         trip1 = 0
-
+    print()
     client1.take_bike(station1)
     mins_ride1 = random.randint(1, 60)
     try:
@@ -70,10 +74,12 @@ def main():
         print(client1)
         print(station1)
         print(station2)
+        print(station3)
+    
     except AttributeError:
         print("Vidsutni velosipedi")
         trip1 = 0
-
+    print()
 
     print(client2)
     client2.take_bike(station3)
@@ -90,5 +96,6 @@ def main():
         print("Vidsutni velosipedi")
         trip2 = 0
 
+    print(f"Profit = {profit} грн")
 if __name__ == "__main__":
     main()
