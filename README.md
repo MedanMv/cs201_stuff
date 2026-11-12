@@ -23,8 +23,8 @@
 
 # Ролі
 
-Alex Sizikikov - 1, 4 - bicycles_and_stations.py, main.py
+Alex Sizikikov - 1, 4 - bicycles_and_stations.py
 
-Oleksandr Dyshchenkov - 2, 4 - client.py, main.py
+Oleksandr Dyshchenkov - 2, 4 - client.py
 
-Ivan Marchenko - 3, 4 - admin.py, main.py
+Ivan Marchenko - 3, 4 - main.py
