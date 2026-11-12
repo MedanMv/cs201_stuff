@@ -24,13 +24,13 @@ class Station:
         self.bikes = []
 
     def add_bike(self, bikes):
-        self.bikes.extend(bikes)
+        self.bikes.append(bikes)
 
     def give_bike(self):
         if self.bikes:
             return self.bikes.pop()
         else:
-            return "нічо"
+            return None
 
     def count_bikes(self):
         return len(self.bikes)
