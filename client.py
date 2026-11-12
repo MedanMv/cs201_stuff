@@ -10,7 +10,7 @@ class Client:
         self.bike = station.give_bike()
         return self.bike
 
-    def calculate_price(ride_time, bike_type):
+    def calculate_price(self, ride_time, bike_type):
         price_per_minute = Bike.per_minute(bike_type)
         return price_per_minute * ride_time
 
